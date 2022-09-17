@@ -3,7 +3,7 @@
 // and what to do when importing types
 declare namespace App {
 	interface Locals {
-		id: number
+		id: number;
 	}
 	// interface PageData {}
 	// interface PageError {}

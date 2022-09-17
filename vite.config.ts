@@ -10,6 +10,6 @@ const config: UserConfig = {
             '$types': path.resolve('./src/types')
         }
     }
-}
+};
 
 export default config;
