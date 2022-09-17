@@ -12,3 +12,7 @@ export type Board = {
 	};
 	board: Tile[][];
 };
+
+export type WaitingRoom = {
+	queue: WaitingQueue
+}
