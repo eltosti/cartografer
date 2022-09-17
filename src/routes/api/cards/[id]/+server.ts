@@ -1,22 +1,12 @@
-import { type RequestEvent, json } from "@sveltejs/kit";
+import type { RequestEvent } from '@sveltejs/kit';
+import type { Card } from "src/lib/types/cards";
+import Cards from "src/lib/types/cards";
+import {error} from "@sveltejs/kit";
 
-import Cards from '$types/cards';
-import type { Card } from "$types/cards";
-export function GET(event: RequestEvent){
-    let card: Card = Cards.filter((card: Card)=> card.id == event.params.id ).pop();
-    if(card){
-        return json({
-            status: 200, 
-            body: {
-                card
-            }
-        }); 
-    }else{
-        return json({
-            status: 404, 
-            body: {
-                message:"No existe la carta que estas buscando"
-            }
-        })
-    }
+
+export function GET(event: RequestEvent) {
+	console.log(event);
+	let card: Card = Cards.filter((card: Card)=> card.id == event.params.id ).pop();
+	if (card) return new Response(JSON.stringify(card))
+	throw error("no existe la carta con id "+event.params.id)
 }
