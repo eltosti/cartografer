@@ -16,3 +16,7 @@ export type Board = {
 export type WaitingRoom = {
 	queue: WaitingQueue
 }
+
+export type RegistroUsuarios = {
+	usuarios: User[]
+}
