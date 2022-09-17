@@ -6,8 +6,8 @@ export async function POST(event: RequestEvent){
     if(!nombre) throw error(400, "Debe indicar un nombre");
     event.locals.user.nombre = nombre;
     console.log(event.locals.user);
-    let localQueue: User[];
+    let localQueue: User[] = [];
     store.subscribe((queue: User[]) => { localQueue = queue });
-    
+    store.addUser(event.locals.user);
     return json(localQueue);
 }
