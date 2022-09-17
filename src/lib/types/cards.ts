@@ -66,7 +66,7 @@ export type Card = {
 };
 
 
-let Cards;
+let Cards: Card[];
 export default Cards = [
 	{
 		id: 1,
