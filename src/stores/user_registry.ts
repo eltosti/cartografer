@@ -24,7 +24,7 @@ function createRegistry(): WritableUserRegistry {
         addUser(user: User){
             update((usuarios) => {
                 if(!this.userExists(user.userid)){
-                    usuarios.usuarios.set(user.userid, user);
+                    usuarios.usuarios[user.userid.toString()] = user;
                 }
                 return usuarios;
             });
@@ -32,7 +32,7 @@ function createRegistry(): WritableUserRegistry {
         getUser(userid: String): User|null
         {
             if(this.userExists(userid)){
-                return state.usuarios.get(userid);
+                return state.usuarios[userid.toString()];
             }else{
                 return null;
             }
@@ -41,7 +41,6 @@ function createRegistry(): WritableUserRegistry {
             return Object.entries(state.usuarios).map(([k, v]) => v);
         },
         userExists(userid: String){
-            console.log(userid, "HEY");
             return Object.keys(state.usuarios).includes(userid.toString());
         }
 	};

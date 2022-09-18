@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-import type { WaitingRoom } from '../local_types/store_state';
+import type { RegistroUsuarios, WaitingRoom } from '../local_types/store_state';
 import type { User } from '../local_types/user';
+import {store as user_register } from './user_registry';
 
 interface WritableRoom extends Writable<WaitingRoom>{
     addUser: Function
@@ -17,14 +18,17 @@ function createRoom(): WritableRoom {
 		set,
 		update,
         addUser(user: User){
-            update((room) =>{
-                let exists = room.queue.filter((value: User) => value.userid == user.userid).pop();
-                if(!exists){
-                    room.queue.push(user);
-                    room.queue = room.queue;
-                }
-                return room;
-            });
+            if(user_register.userExists(user.userid)){
+                let real_user: User = user_register.getUser(user.userid);
+                update((room) =>{
+                    let exists = room.queue.some((value: User) => value.userid == user.userid);
+                    if(!exists){
+                        room.queue.push(real_user);
+                        room.queue = room.queue;
+                    }
+                    return room;
+                });
+            }
         }
 	};
 }
