@@ -4,11 +4,6 @@ import path from "path";
 
 const config: UserConfig = {
     plugins: [sveltekit()],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-        },
-    },
 };
 
 export default config;

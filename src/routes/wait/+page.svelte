@@ -1,3 +1,6 @@
+<div class="flex justify-center">
+
+</div>
 <script lang="ts">
     import { onMount } from 'svelte';
 	import type { WaitingQueue } from "src/local_types/store_state";
@@ -10,7 +13,7 @@
         console.log(json);
     });
     let unsuscribe = store.subscribe((value) => { queue = value.queue });
-    
+
     console.log(queue);
 </script>
 {#each queue as player }
