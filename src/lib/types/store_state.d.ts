@@ -1,3 +1,4 @@
+import type { WaitingQueue } from './rooms';
 export type Tile = {
 	occupied: boolean;
 	material: Material;
@@ -18,5 +19,5 @@ export type WaitingRoom = {
 }
 
 export type RegistroUsuarios = {
-	usuarios: User[]
+	usuarios: { [key: string]: User }
 }
