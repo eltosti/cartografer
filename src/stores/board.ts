@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-import type { Board } from '../lib/types/store_state';
+import type { Board } from '../local_types/store_state';
 
 function createBoard(): Writable<Board> {
 	const { subscribe, set, update } = writable<Board>({
@@ -18,4 +18,5 @@ function createBoard(): Writable<Board> {
 	};
 }
 
-export const store: Writable<Board> = createBoard();
+const store: Writable<Board> = createBoard();
+export {store}

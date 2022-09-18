@@ -14,6 +14,9 @@ export type Board = {
 	board: Tile[][];
 };
 
+
+type WaitingQueue = User[]
+
 export type WaitingRoom = {
 	queue: WaitingQueue
 }

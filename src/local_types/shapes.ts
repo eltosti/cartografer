@@ -1,4 +1,3 @@
-export enum shapes {}
 
 export type Shape = boolean[][];
 

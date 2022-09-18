@@ -1,13 +1,11 @@
-import type { RequestEvent } from '@sveltejs/kit';
-import { json } from '@sveltejs/kit';
-import type { Card } from "@types/cards";
-import Cards from "@types/cards";
-import {error} from "@sveltejs/kit";
+import { json, error } from '@sveltejs/kit';
+import  {Cards, ruinTile} from "../../../../local_types/constants";
+import type { Card} from "../../../../local_types/cards";
+import type {RequestHandler} from "./$types";
 
-
-export function GET(event: RequestEvent) {
+export const GET :RequestHandler = async (event) =>  {
 	console.log(event);
-	let card: Card|undefined = Cards.filter((card: Card)=> card.id == event.params.id ).pop();
+	let card: Card|undefined = Cards.filter((card: Card)=> card.id == (event.params.id as unknown as number )).pop();
 	if (card) return json(card);
 	throw error(404, "no existe la carta con id "+event.params.id)
 }
