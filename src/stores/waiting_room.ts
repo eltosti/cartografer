@@ -18,7 +18,11 @@ function createRoom(): WritableRoom {
 		update, 
         addUser(user: User){
             update((room) =>{
-                room.queue.push(user);
+                let exists = room.queue.filter((value: User) => value.userid == user.userid).pop();
+                if(!exists){
+                    room.queue.push(user);
+                    room.queue = room.queue;
+                }
                 return room;
             });
         }
