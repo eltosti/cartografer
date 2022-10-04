@@ -1,6 +1,7 @@
 <script lang="ts">
     import {Terrain} from "../../local_types/cards";
     import {longDiagonal, standardLine} from "../../local_types/shapes";
+    import Shapes from "./Shapes.svelte";
 
     export let card = {
         id: 7,
@@ -28,6 +29,7 @@
         <div>{card.name}</div>
         <div class="flex justify-center">
             {#each card.materialOptions as material,index}
+                <Shapes/>
                 <div class:selected={index === selectedMaterial} on:click={()=> selectedMaterial = locked ? selectedMaterial : index} class="h-12 w-12 rounded bg-green-200  { !locked ? 'hover:ring-amber-400 hover:ring-2 hover:ring-inset':''}"></div>
             {/each}
         </div>
