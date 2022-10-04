@@ -40,6 +40,7 @@
                         <div class="h-4 w-4  rounded-full bg-amber-400"></div>
                     {/if}
                     <div class="h-12 w-12 rounded ">
+                        <Shapes shape="{shape.shapes[0]}"></Shapes>
                     </div>
                 </div>
             {/each}
