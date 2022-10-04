@@ -1,4 +1,5 @@
 import type { WaitingQueue } from './rooms';
+import type{Card} from "./cards";
 export type Tile = {
 	occupied: boolean;
 	material: Material;
@@ -6,6 +7,16 @@ export type Tile = {
 	void: boolean;
 	id: string;
 };
+
+
+
+export type Objectives = {
+	card: Card,
+	checker: (x: any) => number
+	revealed: boolean
+}
+
+
 export type Board = {
 	size: {
 		x: number;

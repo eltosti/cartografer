@@ -14,6 +14,7 @@ export const POST: RequestHandler = async ({locals, request }) => {
     locals.user.nombre = nombre;
     let registro: RegistroUsuarios = { usuarios: {} };
     store.subscribe((user_registry) => { registro = user_registry });
+
     if(!store.userExists(locals.user.userid)){
         store.addUser(locals.user);
     }

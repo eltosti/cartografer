@@ -38,7 +38,7 @@ function createRegistry(): WritableUserRegistry {
             }
         },
         getUsers(){
-            return Object.entries(state.usuarios).map(([k, v]) => v);
+            return Object.entries(state.usuarios).map(([_, v]) => v);
         },
         userExists(userid: String){
             return Object.keys(state.usuarios).includes(userid.toString());

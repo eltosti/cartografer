@@ -1,13 +1,13 @@
 import type { Shape } from './shapes';
 
 
-export enum Material {
+export enum Terrain {
 	air,
 	Village,
 	Farm,
 	Forest,
 	River,
-	Goblin,
+	Ambush,
 	Mountain
 }
 export enum CardType {
@@ -26,7 +26,7 @@ export type Card = {
 	name: string;
 	time: number;
 	id: number;
-	materialOptions: Material[];
+	materialOptions: Terrain[];
 	shapesOptions: shapeOption[];
 };
 

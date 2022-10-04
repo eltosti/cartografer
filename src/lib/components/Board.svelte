@@ -7,7 +7,7 @@
 	{#each { length: $store.size.x } as _, i (i)}
 		<div class="flex">
 			{#each { length: $store.size.y } as _, j (j)}
-				<div class="p-7 border bg-amber hover:bg-amber-100 "></div>
+				<div class="p-5 border bg-amber hover:bg-amber-100 "></div>
 			{/each}
 		</div>
 	{/each}

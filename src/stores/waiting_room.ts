@@ -18,13 +18,17 @@ function createRoom(): WritableRoom {
 		set,
 		update,
         addUser(user: User){
+            console.log(user_register.userExists(user.userid))
+
             if(user_register.userExists(user.userid)){
                 let real_user: User = user_register.getUser(user.userid);
                 update((room) =>{
+                    console.log("agregando usuario", user)
                     let exists = room.queue.some((value: User) => value.userid == user.userid);
                     if(!exists){
                         room.queue.push(real_user);
                         room.queue = room.queue;
+                        //console.log("agregando usuario", user)
                     }
                     return room;
                 });
@@ -33,4 +37,4 @@ function createRoom(): WritableRoom {
 	};
 }
 const store : WritableRoom = createRoom();
-export default store
+export {store}
