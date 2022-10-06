@@ -5,6 +5,7 @@ import type { User } from 'src/local_types/user';
 
 interface WritableUserRegistry extends Writable<RegistroUsuarios>{
     addUser: Function,
+    setUsername: Function,
     getUser: Function,
     getUsers: Function,
     userExists: (userid: String) => boolean
@@ -25,6 +26,14 @@ function createRegistry(): WritableUserRegistry {
             update((usuarios) => {
                 if(!this.userExists(user.userid)){
                     usuarios.usuarios[user.userid.toString()] = user;
+                }
+                return usuarios;
+            });
+        },
+        setUsername(user: User, name: string){
+            update((usuarios) => {
+                if(this.userExists(user.userid)){
+                    usuarios.usuarios[user.userid.toString()].nombre = name;
                 }
                 return usuarios;
             });
