@@ -2,6 +2,8 @@
 	import Board from '$lib/components/Board.svelte';
 	import MiniCard from "$lib/components/MiniCard.svelte";
 	import Card from "$lib/components/Card.svelte"
+
+
 </script>
 
 <div class="bg-amber-50 h-screen">

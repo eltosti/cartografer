@@ -23,6 +23,10 @@ export type Board = {
 		y: number;
 	};
 	board: Tile[][];
+	mousePosition: {
+		x: number|null,
+		y: number|null
+	}
 };
 
 

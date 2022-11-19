@@ -48,7 +48,7 @@ let Cards: Card[] = [
     },
     {
         id: 2,
-        name: 'Asalto Osgo',
+        name: 'Asalto Ogro',
         time: 0,
         materialOptions: [Terrain.Ambush],
         shapesOptions: [{ shapes: [parallel], coin: false }]
