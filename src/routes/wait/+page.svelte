@@ -8,12 +8,13 @@
     for (const user of data.users) {
         queue.push(user)
     }
-    /*onMount(async () => {
+    onMount(async () => {
+        let other = await fetch("/api/rooms/waiting_room", { method: "POST"});
         let r = await fetch("/api/rooms/waiting_room");
         let json = await r.json();
         queue = json
-		console.log(json)
-    });*/
+		console.log(queue)
+    });
     import { io } from 'socket.io-client'
 
     const socket = io()
@@ -33,23 +34,11 @@
 </script>
 
 {#each queue as player }
-    <div class="flex justify-center items-center h-screen bg-amber-100">
+    <div class="flex justify-center items-center bg-amber-100">
         <div>
             <div>
                 {player.nombre}
             </div>
-            <div>
-                {player.nombre}
-            </div>
-            <div>
-                {player.nombre}
-            </div>
-            <div>
-                {player.nombre}
-            </div>
-            <button on:click={testButton}>
-                hello
-            </button>
         </div>
     </div>
 {/each}

@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-import type { RegistroUsuarios, WaitingRoom } from '../local_types/store_state';
+import type { WaitingRoom } from '../local_types/store_state';
 import type { User } from '../local_types/user';
-import {store as user_register } from './user_registry';
-
+import {store as user_registry } from './user_registry';
+import { webSocketServer } from '../webSocketServer';
 interface WritableRoom extends Writable<WaitingRoom>{
     addUser: Function
 }
@@ -18,12 +18,12 @@ function createRoom(): WritableRoom {
 		set,
 		update,
         addUser(user: User){
-            console.log(user_register.userExists(user.userid))
+            console.log(user_registry.userExists(user.userid))
 
-            if(user_register.userExists(user.userid)){
-                let real_user: User = user_register.getUser(user.userid);
+            if(user_registry.userExists(user.userid)){
+                let real_user: User = user_registry.getUser(user.userid);
                 update((room) =>{
-                    console.log("agregando usuario", user)
+                    console.log("agregando usuario", real_user)
                     let exists = room.queue.some((value: User) => value.userid == user.userid);
                     if(!exists){
                         room.queue.push(real_user);
