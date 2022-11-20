@@ -42,7 +42,6 @@
   "dependencies": {
     "@poppanator/sveltekit-svg": "^1.0.0",
     "socket.io": "^4.5.2",
-    "socket.io-client": "^4.5.2",
-    "spaper": "^0.9.6"
+    "socket.io-client": "^4.5.2"
   }
 }

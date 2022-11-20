@@ -49,7 +49,7 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 			for (let i = 0; i < shape.length; i++) {
 				for (let j = 0; j < shape[i].length; j++) {
 
-					if (shape[i][j] && (typeof(state.board[x+i]) === 'undefined' || typeof(state.board[x+i][y+j]) === 'undefined' || state.board[x+i][y+j].material != Terrain.air) ){
+					if (shape[i][j] && (typeof(state.board[x+i]) === 'undefined' || typeof(state.board[x+i][y+j]) === 'undefined' || state.board[x+i][y+j].occupied) ){
 						return state
 					}
 				}
