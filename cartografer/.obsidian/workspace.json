@@ -1,0 +1,143 @@
+{
+  "main": {
+    "id": "726417aeca7679c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b74aade7d16b315",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff6ccfee6fff1d93",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Tareas/Tareas.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8e5f96929d3ccf15",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ca3dca6e0507f6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37ee91f96628a258",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8aa4b247b7881907",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e68444469100cfde",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "69102de5e3d5cc69",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd91381918b536f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be4dd184cebd20b3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tareas/Tareas.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "069303490c0a50fa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tareas/Tareas.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b234ab3c8423d6a7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "32e6d00be3d71d2c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tareas/Tareas.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ff6ccfee6fff1d93",
+  "lastOpenFiles": [
+    "maquina de estados.md",
+    "Tareas/Tareas.md",
+    "graficar maquina de estado.md"
+  ]
+}
