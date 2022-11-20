@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Button, Form, Input} from "spaper";
+
 
     const login = () => {
 
@@ -18,9 +18,9 @@
 
 <div class="flex justify-center items-center bg-amber-50 h-screen">
     <form action="/api/login" method="POST">
-        <Input bind:value placeholder="Username"  name="nombre" class="margin-bottom-small" valid="{validUsername}"/>
-        <Button disable:value block type="success "  nativeType="submit">
+        <input bind:value placeholder="Username"  name="nombre" class="margin-bottom-small" valid="{validUsername}"/>
+        <button disable:value block type="success "  nativeType="submit">
             Sign in
-        </Button>
+        </button>
     </form>
 </div>

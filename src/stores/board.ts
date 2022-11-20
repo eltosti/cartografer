@@ -2,31 +2,34 @@ import { writable} from 'svelte/store';
 import type { Writable } from 'svelte/store';
 import type {Board, Tile} from '../local_types/store_state';
 import {Terrain} from '../local_types/cards'
+import {emptyTile} from "../local_types/constants";
 
 
 function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 	subscribe: (this: void, run: Subscriber<Board>, invalidate?: Invalidator<Board>) => Unsubscriber; update: (this: void, updater: Updater<Board>) => void; placeCard: void } {
+
+	let tmp_board = Array(11)
+	for (let i = 0; i < 11; i++) {
+		let tmp_row = []
+		for (let j = 0; j < 11; j++) {
+			tmp_row.push(emptyTile)
+		}
+		tmp_board[i]= tmp_row
+	}
+
 	const { subscribe, set, update } = writable<Board>({
 		size: {
 			x: 11,
 			y: 11
 		},
-		board: Array(11).fill(() => new Array(11).fill(Terrain.air)),
+		board: tmp_board,
 		mousePosition: {
 			x: null,
 			y:null
 		}
 	});
 
-	let tmp_board = Array(11)
-	for (let i = 0; i < 11; i++) {
-		let tmp_row = Array(11,Terrain.air)
-		tmp_board.push(tmp_row)
-	}
-	update(state => {
-		state.board = tmp_board
-		return state
-	})
+
 
 
 	return {
@@ -42,16 +45,22 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 				void: false,
 				id: "aaaa",
 			}
+			let isValid = true
 			for (let i = 0; i < shape.length; i++) {
 				for (let j = 0; j < shape[i].length; j++) {
 
+					if (shape[i][j] && (typeof(state.board[x+i]) === 'undefined' || typeof(state.board[x+i][y+j]) === 'undefined' || state.board[x+i][y+j].occupied) ){
+						return state
+					}
+				}
+			}
+			for (let i = 0; i < shape.length; i++) {
+				for (let j = 0; j < shape[i].length; j++) {
 					if (shape[i][j]){
-						console.log("place: ",x+i,y+j)
 						state.board[x+i][y+j] = generatedTile
 					}
 				}
 			}
-			console.log(state.board[4] == state.board[0])
 			return state
 		})
 	};

@@ -33,19 +33,21 @@
 		"src/resources/Water_Icon.png",
 		"src/resources/Monster_Icon.png",
 		"src/resources/Mountain_Icon.png",
-	]
 //bg-amber hover:bg-amber-100
+	]
+	//src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}"
 </script>
 
 
 
-<div on:contextmenu={e => {placer.rotate();e.preventDefault();$board.mousePosition.x = $board.mousePosition.x;return false;}} on:auxclick={middleClick} on:click={placeCard}>
+<div class="select-none" on:contextmenu={e => {placer.rotate();e.preventDefault();$board.mousePosition.x = $board.mousePosition.x;return false;}} on:auxclick={middleClick} on:click={placeCard}>
 	{#each { length: $store.size.x } as _, i (i)}
 		<div class="flex">
 			{#each { length: $store.size.y } as _, j (j)}
-				<img class="w-10 h-10 border  {isInShape(i,j) ? 'bg-red-300' : 'bg-amber' }"
+
+				<img class="w-10 h-10  {isInShape(i,j) ? 'bg-red-300' : 'bg-amber' }"
 					 on:mouseenter={_ => {$board.mousePosition.x = i;$board.mousePosition.y = j}}
-				 alt="" src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}"/>
+				 alt="" src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}" />
 			{/each}
 		</div>
 	{/each}
