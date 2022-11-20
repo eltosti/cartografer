@@ -35,6 +35,7 @@
 		"src/resources/Mountain_Icon.png",
 	]
 //bg-amber hover:bg-amber-100
+	//src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}"
 </script>
 
 
@@ -45,7 +46,7 @@
 			{#each { length: $store.size.y } as _, j (j)}
 				<img class="w-10 h-10 border  {isInShape(i,j) ? 'bg-red-300' : 'bg-amber' }"
 					 on:mouseenter={_ => {$board.mousePosition.x = i;$board.mousePosition.y = j}}
-				 alt="" src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}"/>
+				 alt="" src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}" />
 			{/each}
 		</div>
 	{/each}
