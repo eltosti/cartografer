@@ -13,6 +13,7 @@ kanban-plugin: basic
 - [ ] objetivos
 - [ ] contador de monedas
 - [ ] puntos por temporada
+- [ ] coat of arms
 
 
 ## codigo
@@ -30,6 +31,7 @@ kanban-plugin: basic
 
 ## Planeamineto
 
+- [ ] map info/player info
 
 
 ## Haciendo

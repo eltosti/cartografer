@@ -19,7 +19,7 @@
 <div class="flex justify-center items-center bg-amber-50 h-screen">
     <form action="/api/login" method="POST">
         <input bind:value placeholder="Username"  name="nombre" class="margin-bottom-small" valid="{validUsername}"/>
-        <button disable:value block type="success "  nativeType="submit">
+        <button type="submit">
             Sign in
         </button>
     </form>

@@ -26,7 +26,8 @@ export type Board = {
 	mousePosition: {
 		x: number|null,
 		y: number|null
-	}
+	},
+	seed: number
 };
 
 

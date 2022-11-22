@@ -1,4 +1,404 @@
 {
-    "DEFAULT_BOARD_SIZE": 11
-
+  "DEFAULT_BOARD_SIZE": 11,
+  "TERRAIN_CARDS": {
+    "smallL": {
+      "offset": {
+        "x": 1,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false
+        ],
+        [
+          true,
+          true
+        ]
+      ]
+    },
+    "standardL": {
+      "offset": {
+        "x": 0,
+        "y": 2
+      },
+      "shape": [
+        [
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          false,
+          false,
+          true
+        ]
+      ]
+    },
+    "uglySquare": {
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "shape": [
+        [
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          false
+        ]
+      ]
+    },
+    "shortLine": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          true
+        ],
+        [
+          true
+        ]
+      ]
+    },
+    "standardLine": {
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "shape": [
+        [
+          true,
+          true,
+          true
+        ]
+      ]
+    },
+    "longLine": {
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "shape": [
+        [
+          true,
+          true,
+          true,
+          true
+        ]
+      ]
+    },
+    "longZigZag": {
+      "offset": {
+        "x": 1,
+        "y": 2
+      },
+      "shape": [
+        [
+          false,
+          false,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          true,
+          false
+        ]
+      ]
+    },
+    "standardZigZag": {
+      "offset": {
+        "x": 1,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    "shortDiagonal": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false
+        ],
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    "standardDiagonal": {
+      "offset": {
+        "x": 1,
+        "y": 1
+      },
+      "shape": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          true
+        ]
+      ]
+    },
+    "letterC": {
+      "offset": {
+        "x": 1,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          true,
+          false
+        ],
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          false
+        ]
+      ]
+    },
+    "parallel": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false,
+          true
+        ],
+        [
+          true,
+          false,
+          true
+        ]
+      ]
+    },
+    "longDiagonal": {
+      "offset": {
+        "x": 1,
+        "y": 1
+      },
+      "shape": [
+        [
+          false,
+          false,
+          true
+        ],
+        [
+          false,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          false
+        ]
+      ]
+    },
+    "cross": {
+      "offset": {
+        "x": 1,
+        "y": 1
+      },
+      "shape": [
+        [
+          false,
+          true,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          true,
+          false
+        ]
+      ]
+    },
+    "longL": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          false,
+          false,
+          false
+        ],
+        [
+          true,
+          false,
+          false,
+          false
+        ]
+      ]
+    },
+    "single": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          true
+        ]
+      ]
+    },
+    "standardT": {
+      "offset": {
+        "x": 1,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    "longT": {
+      "offset": {
+        "x": 1,
+        "y": 0
+      },
+      "shape": [
+        [
+          true,
+          false,
+          false
+        ],
+        [
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          false,
+          false
+        ]
+      ]
+    },
+    "empty": {
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "shape": [
+        [
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false
+        ]
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": 1,
+      "name": "Ataque Goblin",
+      "time": 0,
+      "materialOptions": [
+        "Terrain.Ambush"
+      ],
+      "shapesOptions": [
+        {
+          "shapes": [
+            {
+              "$ref": "#/config/TERRAIN_CARDS/smallL"
+            }
+          ],
+          "coin": false
+        }
+      ]
+    }
+  ]
 }

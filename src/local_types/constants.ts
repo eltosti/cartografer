@@ -7,11 +7,14 @@ import {
     smallL,
     standardDiagonal, standardL,
     standardLine,
-    standardT, standarZigZag, uglySquare
+    standardT, standardZigZag, uglySquare
 } from "./shapes";
 import type {Card} from "./cards";
 import {Terrain} from "./cards"
 import type {Tile} from "./store_state";
+import config from '../config.json' assert {type: 'json'}
+
+
 
 export const emptyTile: Tile = {
     occupied: false,
@@ -38,13 +41,14 @@ export const MountainTile: Tile = {
 };
 
 
+
 let Cards: Card[] = [
     {
         id: 1,
         name: 'Ataque Goblin',
         time: 0,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [standardDiagonal], coin: false }]
+        shapesOptions: [{ shapes: [config.TERRAIN_CARDS.standardDiagonal], coin: false }]
     },
     {
         id: 2,
@@ -104,7 +108,7 @@ let Cards: Card[] = [
         materialOptions: [Terrain.Forest],
         shapesOptions: [
             { shapes: [shortDiagonal], coin: true },
-            { shapes: [standarZigZag], coin: false }
+            { shapes: [standardZigZag], coin: false }
         ]
     },
     {

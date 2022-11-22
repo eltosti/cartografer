@@ -79,7 +79,7 @@ export const longZigZag: Shape = {
     ]
 };
 
-export const standarZigZag: Shape = {
+export const standardZigZag: Shape = {
     offset: {
         x: 1,
         y: 0

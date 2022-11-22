@@ -35,7 +35,7 @@
 
 <div class="w-40 h-60 bg-slate-100 m-4 p-2 rounded flex flex-col justify-between">
     <div>
-        <div class="h-8 w-8 rounded-full text-center align-middle bg-slate-200"> {card.time}</div>
+        <div class="h-8 w-8 rounded-full  flex items-center justify-center font-mono align-middle bg-slate-200"> {card.time}</div>
     </div>
     <div>
         <h1><b>{card.name}</b></h1>
