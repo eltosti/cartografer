@@ -24,10 +24,11 @@ export type Board = {
 	};
 	board: Tile[][];
 	mousePosition: {
-		x: number|null,
-		y: number|null
+		x: number,
+		y: number
 	},
-	seed: number
+	seed: number,
+	validPosition: boolean
 };
 
 

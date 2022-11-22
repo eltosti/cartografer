@@ -4,8 +4,8 @@ import type {Board, Tile} from '../local_types/store_state';
 import {Terrain} from '../local_types/cards'
 import {emptyTile, MountainTile} from "../local_types/constants";
 import config from '../config.json' assert { type: "json" };
+import {store as placer} from "./placer";
 
-console.log(config)
 
 function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 	subscribe: (this: void, run: Subscriber<Board>, invalidate?: Invalidator<Board>) => Unsubscriber; update: (this: void, updater: Updater<Board>) => void; placeCard: void } {
@@ -36,10 +36,11 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 		},
 		board: tmp_board,
 		mousePosition: {
-			x: null,
-			y:null
+			x: -1,
+			y:-1
 		},
-		seed: tmp_seed
+		seed: tmp_seed,
+		validPosition: false
 	});
 
 
@@ -63,7 +64,6 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 			let isValid = true
 			for (let i = 0; i < shape.length; i++) {
 				for (let j = 0; j < shape[i].length; j++) {
-
 					if (shape[i][j]
 						&& (typeof(state.board[x+i]) === 'undefined'
 							|| typeof(state.board[x+i][y+j]) === 'undefined'
@@ -82,9 +82,41 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 			}
 			return state
 		}),
+		// @ts-ignore
+		updateMousePosition: (x,y,shape) => update(state => {
+			state.mousePosition = {
+				x: x,
+				y:y
+			}
+			let insideBoard;
+			let min_x_pos = state.mousePosition.x - shape.offset.x
+			let min_y_pos = state.mousePosition.y - shape.offset.y
+			let max_x_pos = min_x_pos + shape.shape.length
+			let max_y_pos = min_y_pos + shape.shape[0].length
+			insideBoard = min_y_pos >= 0 && min_x_pos >= 0 && max_x_pos <= state.board.length && max_y_pos <= state.board[0].length
+			state.validPosition = insideBoard
+			if (!insideBoard) return state
+
+			let allValid = true
+			for (let i = 0; i < shape.shape.length; i++) {
+				for (let j = 0; j < shape.shape[0].length; j++) {
+					let matrixPlacementX = min_x_pos+i
+					let matrixPlacementY = min_y_pos+j
+					if (shape.shape[i][j]) {
+						console.log(state.board[matrixPlacementX][matrixPlacementY].material != Terrain.air)
+						allValid = allValid && state.board[matrixPlacementX][matrixPlacementY].material == Terrain.air
+					}
+				}
+			}
+			state.validPosition = allValid
+			return state
+		})
 	};
 
 }
+
+
+
 
 const store: Writable<Board> = createBoard();
 

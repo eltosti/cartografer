@@ -13,9 +13,9 @@
 		let matrixPlacementY = y-$board.mousePosition.y+$placer.shape.offset.y
 		return $placer.shape.shape[matrixPlacementX][matrixPlacementY]
 	}
-	const isValidPosition:(x: number, y: number) => boolean = (x, y)=>{
-		return $board.board[x][y].material == Terrain.air
-	}
+
+
+
 
 
 	const middleClick = e => {
@@ -48,8 +48,8 @@
 		<div class="flex">
 			{#each { length: $store.size.y } as _, j (j)}
 				<div class="h-10 w-10 relative">
-					<div class="h-10 w-10 absolute z-10 {isInShape(i,j) ? ( isValidPosition(i,j) ? 'bg-[#00ff0080]' : 'bg-[#ff000080]'  ):''}"
-						 on:mouseenter={_ => {$board.mousePosition.x = i;$board.mousePosition.y = j}}></div>
+					<div class="h-10 w-10 absolute z-10 {isInShape(i,j) ? ( $board.validPosition ? 'bg-[#00ff0080]' : 'bg-[#ff000080]'  ):''}"
+						 on:mouseenter={_ => {board.updateMousePosition(i,j,$placer.shape)}}></div>
 					<img class="w-10 h-10 z-0 absolute "
 						 alt="" src="{$board.board[i][j] ? iconFiles[$board.board[i][j].material] : ''}" />
 				</div>
