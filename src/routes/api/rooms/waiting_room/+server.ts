@@ -6,7 +6,7 @@ import type { RequestHandler} from "./$types"
 
 
 export const  GET: RequestHandler = async ({locals}) => {
-    let localQueue: { [p: string]: User } = {"aa": {nombre:"", userid: "" }};
+    let localQueue: { [p: string]: User } = {"aa": {name:"", userid: "" }};
     store.subscribe((queue) => { localQueue = queue.usuarios });
     store.addUser(locals.user);
     console.log(localQueue)

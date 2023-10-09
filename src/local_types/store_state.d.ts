@@ -1,5 +1,7 @@
 import type { WaitingQueue } from './rooms';
 import type{Card} from "./cards";
+
+
 export type Tile = {
 	occupied: boolean;
 	material: Material;

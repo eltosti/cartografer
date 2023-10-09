@@ -31,3 +31,10 @@ export type Card = {
 };
 
 
+export type CardSelection = {
+	name: string;
+	time: number;
+	id: number;
+	material: Terrain;
+	shape: shapeOption;
+}

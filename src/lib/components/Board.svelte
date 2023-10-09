@@ -16,8 +16,6 @@
 
 
 
-
-
 	const middleClick = e => {
 		if (e.which == 2){
 			placer.mirror()

@@ -29,15 +29,17 @@
     {#if time !== 0 }
         <div class="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center font-mono">{time}</div>
     {/if}
-    <div class="h-12 w-12 bg-slate-200">
-        <img alt="{iconFiles[material]}" src="{iconFiles[material]}">
+    <div class="h-12 w-12 relative bg-slate-200">
+        <img alt="{iconFiles[material]}" src="{iconFiles[material]}" class="relative">
+        {#if coin}
+            <div class="h-5 w-5 z-10 border-2 border-[#b37a3a] rounded-full bg-amber-400 absolute bottom-1 left-3.5"></div>
+        {/if}
     </div>
     <div class="h-12 p-1 bg-slate-200 flex justify-center items-center">
-        {#if coin}
-            <div class="h-4 w-4  rounded-full bg-amber-400"></div>
-        {/if}
-        <div class="w-12">
-            <Shapes shape={shape.shape}/>
+        <div class="w-12 flex justify-center">
+            <div>
+                <Shapes shape={shape.shape}/>
+            </div>
         </div>
     </div>
 </div>

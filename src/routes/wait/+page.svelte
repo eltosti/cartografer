@@ -14,7 +14,7 @@
         queue = json
 		console.log(json)
     });*/
-    import { io } from 'socket.io-client'
+    import {io} from 'socket.io-client'
 
     const socket = io()
 
@@ -27,29 +27,24 @@
 
     }
 
-
-
     console.log(data);
 </script>
 
-{#each queue as player }
-    <div class="flex justify-center items-center h-screen bg-amber-100">
-        <div>
+
+<div class="flex justify-center flex-col items-center h-screen bg-amber-100">
+
+    <div>
+        {#each queue as player }
             <div>
                 {player.nombre}
             </div>
-            <div>
-                {player.nombre}
-            </div>
-            <div>
-                {player.nombre}
-            </div>
-            <div>
-                {player.nombre}
-            </div>
-            <button on:click={testButton}>
-                hello
-            </button>
-        </div>
+        {/each}
+
     </div>
-{/each}
+    <div class="mt-2">
+        <button on:click={testButton} class="bg-green-600  text-white uppercase font-bold p-2 pb-3 rounded">
+            start
+        </button>
+    </div>
+</div>
+

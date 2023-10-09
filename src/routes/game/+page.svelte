@@ -6,6 +6,7 @@
 	import {Terrain} from "../../local_types/cards.js";
 	import SeasonPoints from "../../lib/components/SeasonPoints.svelte";
 	import ScoreBoard from "../../lib/components/ScoreBoard.svelte";
+	import {longT} from "../../local_types/shapes.js";
 
 
 </script>
@@ -22,7 +23,7 @@
 		</div>
 		<div class="bg-green-200 box row-span-2 col-span-4">
 			<MiniCard time="{2}" material="{Terrain.River}" coin="{true}"/>
-			<MiniCard time="{1}" material="{Terrain.Ambush}"/>
+			<MiniCard time="{1}" material="{Terrain.Ambush}" shape="{longT}"/>
 			<MiniCard time="{0}" material="{Terrain.Mountain}"/>
 			<Card/>
 		</div>

@@ -4,13 +4,15 @@ import type {Board, Tile} from '../local_types/store_state';
 import {Terrain} from '../local_types/cards'
 import {emptyTile, MountainTile} from "../local_types/constants";
 import config from '../config.json' assert { type: "json" };
-import {store as placer} from "./placer";
 
 
 function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 	subscribe: (this: void, run: Subscriber<Board>, invalidate?: Invalidator<Board>) => Unsubscriber; update: (this: void, updater: Updater<Board>) => void; placeCard: void } {
 	let mountains = [14,15,29,29,15]
 	let tmp_board = Array(config.DEFAULT_BOARD_SIZE)
+
+
+
 	for (let i = 0; i < config.DEFAULT_BOARD_SIZE; i++) {
 		let tmp_row = []
 		for (let j = 0; j < config.DEFAULT_BOARD_SIZE; j++) {
@@ -42,7 +44,6 @@ function createBoard(): { set: (this: void, value: Board) => void; // @ts-ignore
 		seed: tmp_seed,
 		validPosition: false
 	});
-
 
 
 
