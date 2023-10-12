@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Card, Terrain} from "../../local_types/cards";
+    import {Terrain} from "../../local_types/cards";
     import {cross, longZigZag, shortLine} from "../../local_types/shapes";
     import Shapes from "./Shapes.svelte";
     import {store as placer} from "../../stores/placer"
@@ -15,7 +15,7 @@
         "src/resources/Mountain_Icon.png",
     ]
 
-    export let card : Card = {
+    export let card = {
         id: 8,
         name: 'Tierras de Cultivo',
         time: 1,

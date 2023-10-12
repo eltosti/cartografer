@@ -47,6 +47,7 @@ let Cards: Card[] = [
         id: 1,
         name: 'Ataque Goblin',
         time: 0,
+        ruin: false,
         materialOptions: [Terrain.Ambush],
         shapesOptions: [{ shapes: [config.TERRAIN_CARDS.standardDiagonal], coin: false }]
     },
@@ -54,6 +55,7 @@ let Cards: Card[] = [
         id: 2,
         name: 'Asalto Ogro',
         time: 0,
+        ruin: false,
         materialOptions: [Terrain.Ambush],
         shapesOptions: [{ shapes: [parallel], coin: false }]
     },
@@ -61,6 +63,7 @@ let Cards: Card[] = [
         id: 3,
         name: 'Ofensiva Kobold',
         time: 0,
+        ruin: false,
         materialOptions: [Terrain.Ambush],
         shapesOptions: [{ shapes: [standardT], coin: false }]
     },
@@ -68,6 +71,7 @@ let Cards: Card[] = [
         id: 4,
         name: 'Saqueo Gnoll',
         time: 0,
+        ruin: false,
         materialOptions: [Terrain.Ambush],
         shapesOptions: [{ shapes: [letterC], coin: false }]
     },
@@ -75,6 +79,7 @@ let Cards: Card[] = [
         id: 7,
         name: 'Gran Rio',
         time: 1,
+        ruin: false,
         materialOptions: [Terrain.River],
         shapesOptions: [
             { shapes: [standardLine], coin: true },
@@ -85,6 +90,7 @@ let Cards: Card[] = [
         id: 8,
         name: 'Tierras de Cultivo',
         time: 1,
+        ruin: false,
         materialOptions: [Terrain.Farm],
         shapesOptions: [
             { shapes: [shortLine], coin: true },
@@ -95,6 +101,7 @@ let Cards: Card[] = [
         id: 9,
         name: 'Aldea',
         time: 1,
+        ruin: false,
         materialOptions: [Terrain.Village],
         shapesOptions: [
             { shapes: [smallL], coin: true },
@@ -105,6 +112,7 @@ let Cards: Card[] = [
         id: 10,
         name: 'Bosque Olvidado',
         time: 1,
+        ruin: false,
         materialOptions: [Terrain.Forest],
         shapesOptions: [
             { shapes: [shortDiagonal], coin: true },
@@ -115,6 +123,7 @@ let Cards: Card[] = [
         id: 11,
         name: 'Arroyo Interior',
         time: 2,
+        ruin: false,
         materialOptions: [Terrain.Forest, Terrain.Village],
         shapesOptions: [{ shapes: [longZigZag], coin: false }]
     },
@@ -122,6 +131,7 @@ let Cards: Card[] = [
         id: 12,
         name: 'Hacienda',
         time: 2,
+        ruin: false,
         materialOptions: [Terrain.Village, Terrain.Farm],
         shapesOptions: [{ shapes: [standardT], coin: false }]
     },
@@ -129,6 +139,7 @@ let Cards: Card[] = [
         id: 13,
         name: 'Arboles Frutales',
         time: 2,
+        ruin: false,
         materialOptions: [Terrain.Forest, Terrain.Farm],
         shapesOptions: [{ shapes: [standardL], coin: false }]
     },
@@ -136,6 +147,7 @@ let Cards: Card[] = [
         id: 14,
         name: 'Pueblo en los Árboles',
         time: 2,
+        ruin: false,
         materialOptions: [Terrain.Farm, Terrain.River],
         shapesOptions: [{ shapes: [longL], coin: false }]
     },
@@ -143,6 +155,7 @@ let Cards: Card[] = [
         id: 15,
         name: 'Pantanos',
         time: 2,
+        ruin: false,
         materialOptions: [Terrain.Forest, Terrain.River],
         shapesOptions: [{ shapes: [longT], coin: false }]
     },
@@ -150,6 +163,7 @@ let Cards: Card[] = [
         id: 16,
         name: 'Aldea Pesquera',
         time: 1,
+        ruin: false,
         materialOptions: [Terrain.Village, Terrain.River],
         shapesOptions: [{ shapes: [longLine], coin: false }]
     },
@@ -157,6 +171,7 @@ let Cards: Card[] = [
         id: 17,
         name: 'Grieta Interdimensional',
         time: 0,
+        ruin: false,
         materialOptions: [Terrain.Village, Terrain.Farm, Terrain.Forest, Terrain.River],
         shapesOptions: [{ shapes: [single], coin: false }]
     }

@@ -12,8 +12,8 @@
 		let matrixPlacementX = x-$board.mousePosition.x+$placer.shape.offset.x
 		let matrixPlacementY = y-$board.mousePosition.y+$placer.shape.offset.y
 		return $placer.shape.shape[matrixPlacementX][matrixPlacementY]
-	}
 
+	}
 
 
 	const middleClick = e => {
@@ -37,11 +37,13 @@
 		"src/resources/Monster_Icon.png",
 		"src/resources/Mountain_Icon.png",
 	]
+
+
 </script>
 
 
 
-<div class="select-none" on:contextmenu={e => {placer.rotate();e.preventDefault();$board.mousePosition.x = $board.mousePosition.x;return false;}} on:auxclick={middleClick} on:click={placeCard}>
+<div class="select-none" on:contextmenu={e => {placer.rotate();$board.mousePosition.x = $board.mousePosition.x;e.preventDefault();return false;}} on:auxclick={middleClick} on:click={placeCard}>
 	{#each { length: $store.size.x } as _, i (i)}
 		<div class="flex">
 			{#each { length: $store.size.y } as _, j (j)}

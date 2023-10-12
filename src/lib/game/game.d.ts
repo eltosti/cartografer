@@ -1,0 +1,8 @@
+
+
+declare class GameState {
+
+}
+
+
+

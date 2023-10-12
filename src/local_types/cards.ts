@@ -26,6 +26,7 @@ export type Card = {
 	name: string;
 	time: number;
 	id: number;
+	ruin: boolean;
 	materialOptions: Terrain[];
 	shapesOptions: shapeOption[];
 };

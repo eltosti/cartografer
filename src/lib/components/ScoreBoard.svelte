@@ -39,11 +39,10 @@
 
 
 </script>
-<div class="m-2">
-    <div class="flex h-5 my-2 items-center ">
-        <div class="m-1">Coins:</div>
+<div class="my-2 flex flex-col justify-center items-center">
+    <div class="flex items-center mb-2 ">
         {#each  Array(max_coins) as x}
-            <div class="h-4 w-4 m-1 rounded-full bg-amber-400"></div>
+            <div class="h-4 w-4 mx-0.5 flex align-top border-2 border-[#b37a3a] rounded-full bg-amber-400"></div>
         {/each}
     </div>
     <div class="flex justify-evenly items-center ">

@@ -1,12 +1,19 @@
 <script lang="ts">
 	import Board from '$lib/components/Board.svelte';
 	import MiniCard from "$lib/components/MiniCard.svelte";
-	import Card from "$lib/components/Card.svelte"
 	import MapInfo from "$lib/components/MapInfo.svelte"
 	import {Terrain} from "../../local_types/cards.js";
 	import SeasonPoints from "../../lib/components/SeasonPoints.svelte";
 	import ScoreBoard from "../../lib/components/ScoreBoard.svelte";
 	import {longT} from "../../local_types/shapes.js";
+	import Card from "../../lib/components/Card.svelte";
+	import {io} from 'socket.io-client'
+
+	const socket = io()
+
+	socket.on('eventFromServer', (message) => {
+		console.log(message)
+	})
 
 
 </script>

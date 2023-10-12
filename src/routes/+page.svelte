@@ -1,9 +1,6 @@
 <script lang="ts">
 
 
-    const login = () => {
-
-    }
     let value = ""
     const validUsername = async () => {
         if (!value) return false
@@ -17,10 +14,10 @@
 </script>
 
 <div class="flex justify-center items-center bg-amber-50 h-screen">
-    <form action="/api/login" method="POST">
+    <form action="/api/join" method="POST">
         <input bind:value placeholder="Username"  name="nombre" class="margin-bottom-small" valid="{validUsername}"/>
         <button type="submit">
-            Sign in
+            Join
         </button>
     </form>
 </div>
