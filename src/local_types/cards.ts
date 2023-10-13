@@ -36,6 +36,7 @@ export type CardSelection = {
 	name: string;
 	time: number;
 	id: number;
+	ruin: boolean
 	material: Terrain;
 	shape: shapeOption;
 }

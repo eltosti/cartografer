@@ -12,7 +12,7 @@ import {
 import type {Card} from "./cards";
 import {Terrain} from "./cards"
 import type {Tile} from "./store_state";
-import config from '../config.json' assert {type: 'json'}
+
 
 
 
@@ -40,6 +40,14 @@ export const MountainTile: Tile = {
     id: ''
 };
 
+export const VoidTile: Tile = {
+    occupied: true,
+    material: Terrain.air,
+    ruin:false,
+    void: true,
+    id: ''
+}
+
 
 
 let Cards: Card[] = [
@@ -49,7 +57,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [config.TERRAIN_CARDS.standardDiagonal], coin: false }]
+        shapesOptions: [{ shapes: [standardDiagonal], coin: false }]
     },
     {
         id: 2,
