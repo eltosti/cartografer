@@ -1,6 +1,6 @@
 import type {Card} from "../../local_types/cards";
 
-export interface IConfig {
+export type IConfig = {
     size: {
         x: number
         y:number
@@ -9,10 +9,9 @@ export interface IConfig {
         {
             name: string
             duration: number
-            ambush: number
+            difficulty: number
         }
     ]
-    objectivesPerSeason: number
     objectives: string[]
     cards: Card[]
     ruinsCards: number

@@ -15,12 +15,17 @@
 		console.log(message)
 	})
 
+	function te(){
+		socket.emit("testing", "asaasas")
+	}
 
+	let f = 1
+	te()
 </script>
 
 <div class="bg-amber-50 h-screen">
 	<div class="grid overflow-hidden w-screen grid-cols-12 grid-rows-2 gap-2 h-screen">
-		<div class="bg-blue-200 box row-span-2 col-span-4">1</div>
+		<div class="bg-blue-200 box row-span-2 col-span-4" on:click={te}>{f}</div>
 		<div class="box row-span-2 col-span-4 ">
 			<div class="flex flex-col ">
 				<div class="mb-12 mt-2"><MapInfo/></div>

@@ -18,7 +18,7 @@ export enum CardType {
 
 
 export type shapeOption = {
-	shapes: Shape[];
+	shape: Shape;
 	coin: boolean;
 };
 

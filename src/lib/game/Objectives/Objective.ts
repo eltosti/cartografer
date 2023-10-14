@@ -8,3 +8,4 @@ export interface IObjective {
     max: number
     func: (board: IBoard) => number
 }
+

@@ -1,7 +1,8 @@
 import type {Card} from "../../local_types/cards";
-import {Terrain} from "../../local_types/cards";
+import type {Terrain} from "../../local_types/cards";
 import type {Maybe} from "../../types/generics";
 import type {Shape} from "../../local_types/shapes";
+import {isAmbush, getRandomInt, mutateShape, shuffleArray, choose} from "../utils";
 
 
 export interface IDeck {
@@ -10,7 +11,7 @@ export interface IDeck {
     deck: Card[]
     draws: Card[]
 
-    shuffle(dificulty: number, ruins: number): void
+    shuffle(difficulty: number, ruins: number): void
     draw(): Maybe<Card>
     isVariationOfDrawnCard(shape:Shape, material: Terrain): boolean
 }
@@ -46,7 +47,7 @@ export class Deck implements IDeck {
         this.draws.push(firstCard)
         this._mutations = []
         for (const sOptions of firstCard.shapesOptions) {
-            this._mutations.concat(mutateShape(sOptions.shapes[0]))
+            this._mutations.concat(mutateShape(sOptions.shape))
         }
         return firstCard
     }
@@ -70,84 +71,6 @@ shape:  for (const mutation of this._mutations) {
 }
 
 
-function choose(size: number, amount: number): number[] {
-    if (size <= 0 || amount > size) return []
-    let indexChoice = Array.from({length: size}, (value, index) => index);
-    let selected = []
-    for (let i = 0; i < amount; i++) {
-        let rIndex = getRandomInt(size - i)
-        selected.push(indexChoice[rIndex])
-        indexChoice.splice(rIndex,1)
-    }
-    return selected
-}
 
-function shuffleArray(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
-
-function isAmbush(card: Card): boolean {
-    return card.materialOptions.filter(material => material != Terrain.Ambush).length == 0
-}
-
-function getRandomInt(max: number): number {
-    return Math.floor(Math.random() * max);
-}
-
-function rotateClockwise<T>(array: T[][]): T[][] {
-    let x = [...array]
-    x[0].map((val, index) => x.map(row => row[index]).reverse())
-    return x
-}
-
-function rotate(s : Shape): Shape {
-    let tmp = s as F
-    let prevShapeValue = s.shape[s.offset.y][s.offset.x]
-    tmp.shape[s.offset.y][s.offset.x] = null
-    tmp.shape = rotateClockwise(tmp.shape)
-    for (let i = 0; i < tmp.shape.length; i++) {
-        for (let j = 0; j < tmp.shape[0].length; j++) {
-            if (tmp.shape[i][j] == null) {
-                tmp.offset.y = i
-                tmp.offset.x = j
-                tmp.shape[i][j] = prevShapeValue
-            }
-        }
-    }
-    return tmp as Shape
-}
-
-
-export type F = {
-    shape: (boolean|null)[][],
-    offset: {
-        x: number,
-        y: number,
-    }
-};
-
-
-function mirror(shape: Shape): Shape {
-    let g = shape
-    let s = g.shape.reverse()
-    g.offset.x = s.length - g.offset.x -1
-
-    return g
-}
-
-function mutateShape(s: Shape) : Shape[] {
-    let mirrored : Shape= mirror(s)
-    let options : Shape[] = []
-    options.push(s,mirrored)
-    for (let i = 0; i < 3; i++) {
-        options.push(rotate(options[options.length-1]), rotate(options[options.length-2]))
-    }
-    return options
-}
 
 
