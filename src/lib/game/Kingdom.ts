@@ -1,7 +1,7 @@
 import type {IBoard} from "./Board";
 import type {CardSelection} from "../../local_types/cards";
 
-export interface IKingdom {
+export type IKingdom = {
     id: string
     name: string
     badgeId: string
