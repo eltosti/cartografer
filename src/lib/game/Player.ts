@@ -8,6 +8,7 @@ import * as crypto from "crypto";
 
 
 export interface IPlayer {
+    id: string
     kingdomId: string
     points: number
     name: string
@@ -16,7 +17,6 @@ export interface IPlayer {
     score: SeasonScore[]
     placedCard: boolean
     confirmCard: boolean
-    socketId: string
     socket: Maybe<Socket>
     nextCard(card :Card): number
     updateSocket(socket: Socket): boolean
@@ -31,7 +31,7 @@ export type SeasonScore = {
     total: number
 }
 
-export type IPlayerConfig = {
+export type IConfigPlayer = {
     name: string
     title: string
     kingdomName: string
@@ -40,19 +40,20 @@ export type IPlayerConfig = {
 
 
 export class Player implements IPlayer{
-    kingdomId= ""
+    id
+    kingdomId
     points=0
-    name=""
-    title=""
+    name
+    title
     kingdom
     score: SeasonScore[] = []
     placedCard = false
     confirmCard = false
-    socketId= ""
     socket : Maybe<Socket> =  null
 
-    constructor(socket: Socket, playerConfig : IPlayerConfig , boardConfig: IConfigBoard ) {
+    constructor(playerConfig : IConfigPlayer , boardConfig: IConfigBoard ) {
         let tmpBoard = new Board(boardConfig)
+        this.id = crypto.randomUUID()
         this.kingdomId = crypto.randomUUID()
         this.kingdom = {
             id : this.kingdomId,
@@ -63,8 +64,6 @@ export class Player implements IPlayer{
         }
         this.name = playerConfig.name
         this.title = playerConfig.title
-        this.socketId = socket.id
-        this.socket = socket
     }
 
 
@@ -75,7 +74,6 @@ export class Player implements IPlayer{
 
     updateSocket(socket: Socket): boolean {
         this.socket = socket
-        this.socketId = socket.id
         return true
     }
 }

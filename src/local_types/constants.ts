@@ -57,7 +57,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [standardDiagonal], coin: false }]
+        shapesOptions: [{ shape: standardDiagonal, coin: false }]
     },
     {
         id: 2,
@@ -65,7 +65,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [parallel], coin: false }]
+        shapesOptions: [{ shape: parallel, coin: false }]
     },
     {
         id: 3,
@@ -73,7 +73,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [standardT], coin: false }]
+        shapesOptions: [{ shape: standardT, coin: false }]
     },
     {
         id: 4,
@@ -81,7 +81,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Ambush],
-        shapesOptions: [{ shapes: [letterC], coin: false }]
+        shapesOptions: [{ shape: letterC, coin: false }]
     },
     {
         id: 7,
@@ -90,8 +90,8 @@ let Cards: Card[] = [
         ruin: false,
         materialOptions: [Terrain.River],
         shapesOptions: [
-            { shapes: [standardLine], coin: true },
-            { shapes: [longDiagonal], coin: false }
+            { shape: standardLine, coin: true },
+            { shape: longDiagonal, coin: false }
         ]
     },
     {
@@ -101,8 +101,8 @@ let Cards: Card[] = [
         ruin: false,
         materialOptions: [Terrain.Farm],
         shapesOptions: [
-            { shapes: [shortLine], coin: true },
-            { shapes: [cross], coin: false }
+            { shape: shortLine, coin: true },
+            { shape: cross, coin: false }
         ]
     },
     {
@@ -112,8 +112,8 @@ let Cards: Card[] = [
         ruin: false,
         materialOptions: [Terrain.Village],
         shapesOptions: [
-            { shapes: [smallL], coin: true },
-            { shapes: [uglySquare], coin: false }
+            { shape: smallL, coin: true },
+            { shape: uglySquare, coin: false }
         ]
     },
     {
@@ -123,8 +123,8 @@ let Cards: Card[] = [
         ruin: false,
         materialOptions: [Terrain.Forest],
         shapesOptions: [
-            { shapes: [shortDiagonal], coin: true },
-            { shapes: [standardZigZag], coin: false }
+            { shape: shortDiagonal, coin: true },
+            { shape: standardZigZag, coin: false }
         ]
     },
     {
@@ -133,7 +133,7 @@ let Cards: Card[] = [
         time: 2,
         ruin: false,
         materialOptions: [Terrain.Forest, Terrain.Village],
-        shapesOptions: [{ shapes: [longZigZag], coin: false }]
+        shapesOptions: [{ shape: longZigZag, coin: false }]
     },
     {
         id: 12,
@@ -141,7 +141,7 @@ let Cards: Card[] = [
         time: 2,
         ruin: false,
         materialOptions: [Terrain.Village, Terrain.Farm],
-        shapesOptions: [{ shapes: [standardT], coin: false }]
+        shapesOptions: [{ shape: standardT, coin: false }]
     },
     {
         id: 13,
@@ -149,7 +149,7 @@ let Cards: Card[] = [
         time: 2,
         ruin: false,
         materialOptions: [Terrain.Forest, Terrain.Farm],
-        shapesOptions: [{ shapes: [standardL], coin: false }]
+        shapesOptions: [{ shape: standardL, coin: false }]
     },
     {
         id: 14,
@@ -157,7 +157,7 @@ let Cards: Card[] = [
         time: 2,
         ruin: false,
         materialOptions: [Terrain.Farm, Terrain.River],
-        shapesOptions: [{ shapes: [longL], coin: false }]
+        shapesOptions: [{ shape: longL, coin: false }]
     },
     {
         id: 15,
@@ -165,7 +165,7 @@ let Cards: Card[] = [
         time: 2,
         ruin: false,
         materialOptions: [Terrain.Forest, Terrain.River],
-        shapesOptions: [{ shapes: [longT], coin: false }]
+        shapesOptions: [{ shape: longT, coin: false }]
     },
     {
         id: 16,
@@ -173,7 +173,7 @@ let Cards: Card[] = [
         time: 1,
         ruin: false,
         materialOptions: [Terrain.Village, Terrain.River],
-        shapesOptions: [{ shapes: [longLine], coin: false }]
+        shapesOptions: [{ shape: longLine, coin: false }]
     },
     {
         id: 17,
@@ -181,7 +181,7 @@ let Cards: Card[] = [
         time: 0,
         ruin: false,
         materialOptions: [Terrain.Village, Terrain.Farm, Terrain.Forest, Terrain.River],
-        shapesOptions: [{ shapes: [single], coin: false }]
+        shapesOptions: [{ shape: single, coin: false }]
     }
 ];
 export { Cards, ruinTile}

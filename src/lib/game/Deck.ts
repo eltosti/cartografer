@@ -21,24 +21,28 @@ export class Deck implements IDeck {
     ambush: Card[] = []
     deck: Card[] = []
     draws: Card[] = []
-
+    drawnAmbush: Card[] = []
+    ruins: number = 2
     _mutations: Shape[] = []
 
-    constructor(cards: Card[]) {
+    constructor(cards: Card[], ruins: number = 2) {
         this.cards = cards.filter(x => !isAmbush(x))
         this.ambush = cards.filter(x => isAmbush(x))
+        this.ruins = ruins
     }
 
-    shuffle(difficulty= 1, ruins= 2) {
-        this.deck = [...this.cards]
+    shuffle() {
+        let notReveledAmbush = this.deck.filter(x => isAmbush(x))
+        this.deck = [...this.cards].concat(notReveledAmbush)
         shuffleArray(this.deck)
-        let ambushCards = choose(this.ambush.length-1, difficulty).map( index => this.ambush[index] )
-        for (let i = 0; i < difficulty; i++) {
-            this.deck.splice(getRandomInt(this.deck.length),0, ambushCards[i])
-        }
-        for (let index in choose(this.deck.length,ruins)) {
+        for (let index in choose(this.deck.length,this.ruins)) {
             this.deck[index].ruin = true
         }
+        let ambushIndex = getRandomInt(this.ambush.length)
+        let ambushCard =  this.ambush[ambushIndex]
+        this.drawnAmbush.push(ambushCard)
+        this.ambush.splice(ambushIndex,1)
+        this.deck.splice(getRandomInt(this.deck.length),0, ambushCard)
     }
 
     draw() {

@@ -4,6 +4,7 @@ import type {IObjective} from "./Objective";
 
 export const mountainCoins : IObjective = {
     name: "mountain coins",
+    flavor: "",
     description: "helper para contar montañas rellenas",
     hints: [Terrain.Mountain],
     max: Number.MAX_VALUE,

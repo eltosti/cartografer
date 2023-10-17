@@ -4,6 +4,7 @@ import {mountainCoins} from "./mountainCoins";
 
 export type IObjective  = {
     name: string
+    flavor: string
     description: string
     hints: Terrain[]|"placement"
     max: number
